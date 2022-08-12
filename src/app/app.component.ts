@@ -11,8 +11,8 @@ import {
 @Component({
   selector: 'app-root',
   template: `
-    {{ valor }}
-    <button (click)="adicionar()">Adicionar</button>
+    <app-title *ngIf="!destroyed"></app-title>
+    <button (click)="destroy()">Switch</button>
     <router-outlet></router-outlet>
   `,
 })
@@ -24,17 +24,18 @@ export class AppComponent
     AfterContentChecked,
     AfterViewInit,
     AfterViewChecked {
-  public valor: number = 1
+  public destroyed: boolean = false
 
   constructor() {}
-
-  public adicionar(): number {
-    return (this.valor += 1)
-  }
 
   ngOnInit(): void {
     console.log('ngOnInit')
   }
+
+  public destroy() {
+    this.destroyed = !this.destroyed
+  }
+
   ngDoCheck(): void {
     console.log('ngDoCheck')
   }
