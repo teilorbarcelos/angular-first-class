@@ -8,3 +8,28 @@
 
 <h2>Property Biding</h2>
 <button [disabled]="isDisabled">Botão</button>
+
+<br />
+<br />
+
+<hr />
+
+<h2>Event Biding</h2>
+
+<button (click)="alertInfo('Funcionou!')">Alert Event</button>
+
+<br />
+<br />
+
+<button (click)="eventInfo($event)">Mouse Event</button>
+
+<div
+  (mousemove)="mouseMoveAction($event)"
+  style="background: red; width: 100%; height: 100px;"
+></div>
+
+{{ cursorPosition.x }} - {{ cursorPosition.y }}
+
+<br />
+<br />
+<hr />
