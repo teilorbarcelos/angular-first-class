@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core'
+
+@Component({
+  selector: 'app-structural-directives',
+  templateUrl: './structural-directives.component.html',
+  styleUrls: ['./structural-directives.component.scss'],
+})
+export class StructuralDirectivesComponent implements OnInit {
+  public condition: boolean = true
+  public conditionClick: boolean = true
+
+  constructor() {}
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.condition = !this.condition
+    }, 2000)
+  }
+
+  public switch() {
+    this.conditionClick = !this.conditionClick
+  }
+}
