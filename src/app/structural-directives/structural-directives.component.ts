@@ -13,11 +13,13 @@ interface ListItemProps {
 export class StructuralDirectivesComponent implements OnInit {
   public condition: boolean = true
   public conditionClick: boolean = true
+  public listItem: ListItemProps = { name: '', age: 0 }
   public list: ListItemProps[] = [
     { name: 'Pedrinho', age: 35 },
     { name: 'Luizinho', age: 36 },
     { name: 'Zezinho', age: 37 },
   ]
+  public switchConditional: number = 1
 
   constructor() {}
 
@@ -31,8 +33,9 @@ export class StructuralDirectivesComponent implements OnInit {
     this.conditionClick = !this.conditionClick
   }
 
-  public addToList() {
-    this.list.push({ name: 'Tio Patinhas', age: 78 })
+  public addToList(listItem: ListItemProps) {
+    this.list.push(listItem)
+    this.listItem = { name: '', age: 0 }
   }
 
   public removefromList(item: number) {

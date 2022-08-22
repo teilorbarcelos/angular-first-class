@@ -16,4 +16,17 @@
   </li>
 </ul>
 
-<button (click)="addToList()">Add to List</button>
+<input type="text" [(ngModel)]="listItem.name" />
+<input type="number" [(ngModel)]="listItem.age" />
+
+<button (click)="addToList(listItem)">Add to List</button>
+
+<hr />
+
+<input type="text" [(ngModel)]="switchConditional" />
+
+<div [ngSwitch]="switchConditional">
+  <p *ngSwitchCase="1">it is 1</p>
+  <p *ngSwitchCase="2">it is 2</p>
+  <p *ngSwitchDefault>it is another thing</p>
+</div>
