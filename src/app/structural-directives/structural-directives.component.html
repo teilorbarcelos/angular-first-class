@@ -30,3 +30,20 @@
   <p *ngSwitchCase="2">it is 2</p>
   <p *ngSwitchDefault>it is another thing</p>
 </div>
+
+<hr />
+
+<ul>
+  <li *ngFor="let item of list; let i = index" (click)="removefromList(i)">
+    [{{ i }}] - {{ item.name | uppercase }} tem {{ item.age }} anos.
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="listItem.name" />
+<input type="number" [(ngModel)]="listItem.age" />
+
+<button (click)="addToList(listItem)">Add to List</button>
+
+<hr />
+
+<p>agora é {{ date | date: 'dd/MM/YYYY HH:mm:ss' }}</p>

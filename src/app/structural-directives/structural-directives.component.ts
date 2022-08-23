@@ -20,6 +20,7 @@ export class StructuralDirectivesComponent implements OnInit {
     { name: 'Zezinho', age: 37 },
   ]
   public switchConditional: number = 1
+  public date: Date = new Date(Date.now())
 
   constructor() {}
 
@@ -27,6 +28,10 @@ export class StructuralDirectivesComponent implements OnInit {
     setInterval(() => {
       this.condition = !this.condition
     }, 2000)
+
+    setInterval(() => {
+      this.date = new Date(Date.now())
+    }, 1000)
   }
 
   public switch() {
