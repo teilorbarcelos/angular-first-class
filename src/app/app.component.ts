@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 @Component({
   selector: 'app-root',
   template: `
+    <app-first-shared-component></app-first-shared-component>
     <app-structural-directives></app-structural-directives>
     <app-attributes-directives>
       <h1>Directives attributes lesson</h1>
