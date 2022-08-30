@@ -6,7 +6,8 @@ import { EventEmitter, Injectable } from '@angular/core'
 export class FoodListService {
   public emitEvent = new EventEmitter()
 
-  private list: string[] = ['carne', 'arroz', 'feijão', 'ovo']
+  // private list: string[] = ['carne', 'arroz', 'feijão', 'ovo']
+  private list: string[] = []
 
   constructor() {}
 

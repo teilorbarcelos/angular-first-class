@@ -1,0 +1,8 @@
+{
+  "food-list": [
+    { "id": 1, "name": "carne" },
+    { "id": 2, "name": "arroz" },
+    { "id": 3, "name": "feijão" },
+    { "id": 4, "name": "ovo" }
+  ]
+}
