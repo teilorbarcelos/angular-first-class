@@ -21,6 +21,8 @@ import { Component, OnInit } from '@angular/core'
       <h3>{{ getData.age }}</h3>
     </ng-template>
     <app-output (sendData)="setData($event)"></app-output>
+    <hr />
+    <app-food-list></app-food-list>
     <router-outlet></router-outlet>
   `,
 })
