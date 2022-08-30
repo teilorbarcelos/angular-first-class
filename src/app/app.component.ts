@@ -23,6 +23,8 @@ import { Component, OnInit } from '@angular/core'
     <app-output (sendData)="setData($event)"></app-output>
     <hr />
     <app-food-list></app-food-list>
+    <hr />
+    <app-add-food></app-add-food>
     <router-outlet></router-outlet>
   `,
 })
