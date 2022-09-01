@@ -18,7 +18,10 @@ export class FoodListComponent implements OnInit {
     })
 
     this.foodListService.emitEvent.subscribe({
-      next: (response: string) => alert(`Você adicionou => ${response} `),
+      next: (response: FoodListItem) => {
+        alert(`Você adicionou => ${response.name} `)
+        return this.foodList.push(response)
+      },
       error: (error: any) => console.log(error),
     })
   }

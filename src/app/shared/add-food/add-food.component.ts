@@ -12,6 +12,9 @@ export class AddFoodComponent implements OnInit {
   ngOnInit(): void {}
 
   public addListItem(food: string) {
-    return this.foodListService.addFoodToList(food)
+    return this.foodListService.addFoodToList(food).subscribe({
+      next: (response) => this.foodListService.foodListAlert(response),
+      error: (error) => error,
+    })
   }
 }

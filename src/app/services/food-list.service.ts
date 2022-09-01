@@ -22,12 +22,18 @@ export class FoodListService {
     )
   }
 
-  public addFoodToList(foodName: string) {
-    this.foodListAlert(foodName)
-    return this.list.push({ id: this.list.length, name: foodName })
+  public addFoodToList(foodName: string): Observable<FoodListItem> {
+    return this.http
+      .post<FoodListItem>(`${this.api}food-list`, {
+        name: foodName,
+      })
+      .pipe(
+        (response) => response,
+        (error) => error,
+      )
   }
 
-  public foodListAlert(message: string) {
-    return this.emitEvent.emit(message)
+  public foodListAlert(foodItem: FoodListItem) {
+    return this.emitEvent.emit(foodItem)
   }
 }
