@@ -33,6 +33,24 @@ export class FoodListService {
       )
   }
 
+  public foodListUpdate(food: FoodListItem): Observable<FoodListItem> {
+    return this.http
+      .put<FoodListItem>(`${this.api}food-list/${food.id}`, {
+        name: food.name,
+      })
+      .pipe(
+        (response) => response,
+        (error) => error,
+      )
+  }
+
+  public foodListDelete(food: number): Observable<FoodListItem> {
+    return this.http.delete<FoodListItem>(`${this.api}food-list/${food}`).pipe(
+      (response) => response,
+      (error) => error,
+    )
+  }
+
   public foodListAlert(foodItem: FoodListItem) {
     return this.emitEvent.emit(foodItem)
   }

@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component'
 import { OutputComponent } from './output/output.component'
 import { FoodListComponent } from './food-list/food-list.component'
 import { AddFoodComponent } from './add-food/add-food.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AddFoodComponent } from './add-food/add-food.component'
     FoodListComponent,
     AddFoodComponent,
   ],
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, FormsModule],
   exports: [
     FirstSharedComponentComponent,
     InputComponent,
