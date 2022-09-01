@@ -1,12 +1,19 @@
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { EventEmitter, Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
+
+// interface
 import { FoodListItem } from '../module/food-list-item'
 
 @Injectable({
   providedIn: 'root',
 })
 export class FoodListService {
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  }
   private api: string = 'http://localhost:3000/'
   public emitEvent = new EventEmitter()
 
@@ -24,9 +31,13 @@ export class FoodListService {
 
   public addFoodToList(foodName: string): Observable<FoodListItem> {
     return this.http
-      .post<FoodListItem>(`${this.api}food-list`, {
-        name: foodName,
-      })
+      .post<FoodListItem>(
+        `${this.api}food-list`,
+        {
+          name: foodName,
+        },
+        this.httpOptions,
+      )
       .pipe(
         (response) => response,
         (error) => error,
