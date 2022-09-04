@@ -9,11 +9,50 @@
 
   <label for="">Cor favorita:</label>
   <br />
-  <input type="radio" name="color" value="red" ngModel />
-  Vermelho.
+  <input type="radio" name="color" id="redColor" value="red" ngModel />
+  <label for="redColor">Vermelho.</label>
   <br />
-  <input type="radio" name="color" value="blue" ngModel />
-  Azul.
+  <input type="radio" name="color" id="blueColor" value="blue" ngModel />
+  <label for="blueColor">Azul.</label>
+  <br />
+
+  <label for="">Melhores tecnologias:</label>
+  <br />
+  <input
+    type="checkbox"
+    name="angularTechnology"
+    id="angularTechnology"
+    value="angular"
+    ngModel
+  />
+  <label for="angularTechnology">Angular.</label>
+  <br />
+  <input
+    type="checkbox"
+    name="reactTechnology"
+    id="reactTechnology"
+    value="react"
+    ngModel
+  />
+  <label for="reactTechnology">React.</label>
+  <br />
+  <input
+    type="checkbox"
+    name="vueTechnology"
+    id="vueTechnology"
+    value="vue"
+    ngModel
+  />
+  <label for="vueTechnology">Vue.</label>
+  <br />
+  <br />
+
+  <select name="comida" ngModel>
+    <option value="">Selecione comida preferida</option>
+    <option *ngFor="let foodItem of foodList" value="{{ foodItem.value }}">
+      {{ foodItem.label }}
+    </option>
+  </select>
 </form>
 
 {{ form.value | json }}
