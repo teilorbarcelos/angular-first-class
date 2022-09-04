@@ -1,0 +1,19 @@
+<form #form="ngForm">
+  <label for="">Nome:</label>
+  <input type="text" name="name" ngModel />
+  <br />
+
+  <label for="">Idade:</label>
+  <input type="number" name="age" ngModel />
+  <br />
+
+  <label for="">Cor favorita:</label>
+  <br />
+  <input type="radio" name="color" value="red" ngModel />
+  Vermelho.
+  <br />
+  <input type="radio" name="color" value="blue" ngModel />
+  Azul.
+</form>
+
+{{ form.value | json }}

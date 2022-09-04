@@ -25,6 +25,8 @@ import { Component, OnInit } from '@angular/core'
     <app-food-list></app-food-list>
     <hr />
     <app-add-food></app-add-food>
+    <hr />
+    <app-forms></app-forms>
     <router-outlet></router-outlet>
   `,
 })
