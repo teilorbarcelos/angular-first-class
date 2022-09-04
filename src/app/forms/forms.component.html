@@ -1,6 +1,12 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
   <label for="">Nome:</label>
-  <input type="text" name="name" ngModel />
+  <input
+    type="text"
+    name="name"
+    #name="ngModel"
+    required=""
+    [ngModel]="name.value"
+  />
   <br />
 
   <label for="">Idade:</label>
@@ -53,6 +59,16 @@
       {{ foodItem.label }}
     </option>
   </select>
+  <br />
+  <button [disabled]="form.invalid">Enviar</button>
 </form>
 
 {{ form.value | json }}
+<br />
+<span>{{ name.valid ? 'Nome Válido' : 'Nome Inválido' }}</span>
+<br />
+<span>
+  {{ form.dirty ? 'Formulário modificado' : 'Formulário não modificado' }}
+</span>
+<br />
+<span>{{ name.touched ? 'Nome tocado' : 'Nome intocado' }}</span>
